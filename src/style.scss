@@ -1,0 +1,199 @@
+$fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
+@import "~bootstrap/scss/bootstrap";
+@import "~@fortawesome/fontawesome-free";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+$bg-body    : #f7f9fd;
+$blue       : #5883ff;
+$black      : #000000;
+$white      : #ffffff;
+$dark-gray  : #232323;
+$light-gray : #dcdcdc;
+$gray       : #999999;
+$font-family : 'Roboto',
+sans-serif;
+$font-size : 30px;
+
+body {
+	background : $bg-body;
+	color      : $black;
+	font-family: $font-family;
+	font-size  : $font-size;
+}
+
+#app {
+	min-height     : 100vh;
+	display        : flex;
+	justify-content: center;
+	align-items    : center;
+}
+
+.search {
+	display        : flex;
+	justify-content: center;
+	align-items    : center;
+	border         : solid 1px $light-gray;
+	border-bottom  : solid 2px $blue;
+	border-radius  : 10px 10px 0 0;
+	font-size      : 16px;
+	background     : $white;
+	height         : 50px;
+	padding        : 0 20px;
+	margin-top: 15px;
+
+	&__input {
+		padding       : 10px;
+		border        : 0;
+		width         : 100%;
+		letter-spacing: 1.05px;
+
+		&:focus {
+			outline: 0;
+		}
+
+		&::placeholder {
+			color: $dark-gray;
+		}
+	}
+
+	label {
+		margin: 0;
+	}
+
+	i {
+		color      : $blue;
+		font-size  : 24px;
+		font-weight: 300;
+		cursor     : pointer;
+	}
+}
+
+.instant-search {
+	background-color: $white;
+	border          : 1px solid $light-gray;
+	border-radius   : 10px;
+	margin-top      : 10px;
+	position        : relative;
+
+	&__results {
+		padding: 30px;
+	}
+
+	&::after {
+		position     : absolute;
+		content      : '';
+		width        : 0;
+		height       : 0;
+		bottom       : 100%;
+		left         : 8%;
+		border-left  : 14px solid transparent;
+		border-right : 14px solid transparent;
+		border-bottom: 18px solid $white;
+	}
+
+	.btn-link {
+		color  : $blue;
+		padding: 20px;
+	}
+	margin-bottom: 15px;
+}
+
+.movie {
+	width        : 100%;
+	border-bottom: 1px solid $light-gray;
+	padding      : 30px 0;
+	font-size    : 14px;
+
+	&:first-child {
+		padding-top: 0;
+	}
+
+	&:last-child {
+		border        : 0;
+		padding-bottom: 0;
+	}
+
+	&__title {
+		margin-bottom: 30px;
+
+		h2 {
+			font-size: 18px;
+		}
+
+		strong {
+			font-size: 16px;
+		}
+
+		i {
+			color       : $blue;
+			margin-right: 5px;
+		}
+
+		.emphasis {
+			text-decoration: underline;
+			font-weight: bold;
+		}
+	}
+
+	&__raiting {}
+
+	img {
+		width        : 100%;
+		margin-bottom: 20px;
+	}
+
+	.fa-image {
+		font-size: 64px;
+		color: $blue;
+	}
+
+	@media (max-width: 992px) {
+		img {
+			width     : auto;
+			max-height: 200px;
+		}
+	}
+
+	p {
+		&:last-child {
+			margin: 0;
+		}
+	}
+}
+
+.list {
+	font-size: 14px;
+	&__title {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		border-bottom: 2px solid $blue;
+		margin: 50px 0 30px 0;
+		div {
+			strong {
+				color: $blue;
+				font-weight: normal;
+			}
+			span {
+				color: $gray;
+				margin-left: 10px;
+			}
+		}
+		a {
+			justify-self: flex-end;
+			font-size: 26px;
+			color: $blue;
+		}
+	}
+	&__up {
+		position: fixed;
+		right: 0;
+		bottom: 50px;
+		background-color: $black;
+		color: $white;
+		font-size: 26px;
+		padding: 20px;
+		cursor: pointer;
+	}
+}
